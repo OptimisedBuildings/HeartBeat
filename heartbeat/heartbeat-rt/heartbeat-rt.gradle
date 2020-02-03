@@ -1,0 +1,33 @@
+/* Module Build File */
+
+description     = "MQTT based heartbeat for system health monitoring"
+ext {
+}
+niagaraModule {
+  moduleName = "heartbeat"
+  preferredSymbol = "hb"
+  runtimeProfile = "rt"
+}
+
+dependencies {
+  compile "Tridium:nre:4.7"
+  compile "Tridium:baja:4.7"
+  compile "Tridium:control-rt:4.7"
+  compile "Tridium:abstractMqttDriver-rt:1.0"
+  compile "Tridium:alarm-rt:4.7"
+  compile "Tridium:history-rt:4.7"
+  compile "Tridium:ndriver-rt:4.7"
+  compile "Tridium:driver-rt:4.7"
+}
+
+moduleTestJar {
+  from('srcTest') {
+  }
+}
+
+// Import images to jar
+jar {
+  from('src') {
+    include 'res/**/*.*'
+  }
+}

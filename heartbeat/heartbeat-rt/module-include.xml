@@ -1,0 +1,16 @@
+<!-- Module Include File -->
+<!-- Types -->
+<types>
+  <!-- Type Example:<type name="MyClass" class="com.acme.BMyClass"/> -->
+  <!--com.optimised_buildings_ltd.heartbeat-->
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatDevice" name="HeartbeatDevice"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatNetwork" name="HeartbeatNetwork"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatBeatPoint" name="HeartbeatBeatPoint"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatPointsFolder" name="HeartbeatPointsFolder"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BTimeInterval" name="TimeInterval"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatBeatReceiver" name="HeartbeatBeatReceiver"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatSubscriber" name="HeartbeatSubscriber"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BMqttStringSubscriber" name="MqttStringSubscriber"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BStationInfo" name="StationInfo"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHealthData" name="HealthData"/>
+</types>

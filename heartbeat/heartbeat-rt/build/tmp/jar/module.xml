@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="heartbeat-rt" bajaVersion="0" vendor="Optimised_Buildings_Ltd" vendorVersion="1.0" description="MQTT based heartbeat for system health monitoring" preferredSymbol="hb" nre="true" autoload="true" installable="true" buildMillis="1580226422557" buildHost="Reevsey" moduleName="heartbeat" runtimeProfile="rt">
+ <dependencies>
+  <dependency name="driver-rt" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="history-rt" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="baja" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="alarm-rt" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="control-rt" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="ndriver-rt" vendor="Tridium" vendorVersion="4.7"/>
+  <dependency name="abstractMqttDriver-rt" vendor="Tridium" vendorVersion="1.0"/>
+ </dependencies>
+ <dirs/>
+ <types>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatDevice" name="HeartbeatDevice"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatNetwork" name="HeartbeatNetwork"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatBeatPoint" name="HeartbeatBeatPoint"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatPointsFolder" name="HeartbeatPointsFolder"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BTimeInterval" name="TimeInterval"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatBeatReceiver" name="HeartbeatBeatReceiver"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHeartbeatSubscriber" name="HeartbeatSubscriber"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BMqttStringSubscriber" name="MqttStringSubscriber"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BStationInfo" name="StationInfo"/>
+  <type class="com.optimised_buildings_ltd.heartbeat.BHealthData" name="HealthData"/>
+ </types>
+ <permissions>
+  <niagara-permission-groups type="all"/>
+  <niagara-permission-groups type="workbench"/>
+  <niagara-permission-groups type="station">
+   <req-permission>
+    <name>NETWORK_COMMUNICATION</name>
+    <purposeKey>Outside access for Driver</purposeKey>
+    <parameters>
+     <parameter name="hosts" value="127.0.0.1"/>
+     <parameter name="ports" value="*"/>
+     <parameter name="type" value="all"/>
+    </parameters>
+   </req-permission>
+  </niagara-permission-groups>
+ </permissions>
+</module>
