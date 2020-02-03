@@ -18,6 +18,7 @@ dependencies {
   compile "Tridium:history-rt:4.7"
   compile "Tridium:ndriver-rt:4.7"
   compile "Tridium:driver-rt:4.7"
+
 }
 
 moduleTestJar {

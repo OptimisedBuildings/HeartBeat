@@ -236,7 +236,7 @@ public class BHeartbeatNetwork extends BAbstractMqttDriverNetwork {
 
       String topicDeviceName = device.getDisplayName(null);
       if(device.getType().toString().contains("Trend")) {
-        topicDeviceName = device.getParent().getParent().getDisplayName(null) + "/" + topicDeviceName;
+        topicDeviceName = device.getParent().getParent().getDisplayName(null) + "/" + device.getParent().getDisplayName(null) + "/" + topicDeviceName;
       }
       deviceIds.add(device.getNetwork() + "/" + topicDeviceName);
       this.runSetTopicAndPublish(topicBase + "/" + device.getNetwork() + "/" + topicDeviceName, transmission.toString());
@@ -268,8 +268,9 @@ public class BHeartbeatNetwork extends BAbstractMqttDriverNetwork {
         JSONObject skysparkHealth = new JSONObject();
         BComplex stats = (BComplex)haystack.get("stats");
         skysparkHealth.append("points", stats.get("numPoints"));
-        skysparkHealth.append("lastRebuild", stats.get("lastCacheRebuildTime"));
-        this.runSetTopicAndPublish(topicBase + "/skysparkHealth", skysparkHealth.toString());
+        skysparkHealth.append("status", haystack.get("status"));
+        skysparkHealth.append("enabled", haystack.get("enabled"));
+        this.runSetTopicAndPublish(topicBase + "/nHaystackHealth", skysparkHealth.toString());
     }
   }
 
